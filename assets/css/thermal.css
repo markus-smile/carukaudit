@@ -537,7 +537,10 @@
 
   .hero h1 { font-size: clamp(2.25rem, 9.5vw, 3rem); }
 
-  .trust-bar-inner    { gap: var(--sp-8); }
+  .trust-bar-inner    { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-8) var(--sp-6); }
+  .trust-stat-num     { font-size: var(--text-3xl); }
+  .hero-meta          { gap: var(--sp-4); padding-top: var(--sp-6); }
+  .hero-meta-item     { font-size: var(--text-xs); }
   .services-grid      { grid-template-columns: 1fr; }
   .feature-grid       { grid-template-columns: 1fr; }
   .process-steps      { grid-template-columns: 1fr; }

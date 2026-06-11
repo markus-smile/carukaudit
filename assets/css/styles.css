@@ -380,8 +380,8 @@ strong { color: var(--c-ink); font-weight: 600; }
   display: none;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 48px;
+  height: 48px;
   background: var(--c-surface);
   border: 1px solid var(--c-border);
   border-radius: var(--r-md);
@@ -389,6 +389,8 @@ strong { color: var(--c-ink); font-weight: 600; }
   cursor: pointer;
   transition: all var(--t-fast);
   flex-shrink: 0;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 .mobile-menu-btn:hover { background: var(--c-surface-2); border-color: var(--c-accent); }
 
@@ -1016,6 +1018,9 @@ strong { color: var(--c-ink); font-weight: 600; }
   .grid-3, .grid-2 { grid-template-columns: 1fr; }
   .footer-grid      { grid-template-columns: 1fr; }
   .form-row         { grid-template-columns: 1fr; }
+
+  /* O mnie — siatka bio bez inline style */
+  .about-grid { grid-template-columns: 1fr !important; gap: 2rem !important; }
 
   .sticky-cta { display: flex; }
   .sticky-cta .btn { flex: 1; justify-content: center; }
