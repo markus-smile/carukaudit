@@ -1004,14 +1004,32 @@ strong { color: var(--c-ink); font-weight: 600; }
     transform: none;
     box-shadow: none;
     border: none;
-    background: rgba(255,255,255,.02);
-    border-radius: var(--r-md);
-    padding: var(--sp-2);
-    margin-bottom: var(--sp-2);
-    display: none;
+    border-left: 2px solid var(--c-border);
+    border-radius: 0;
+    background: transparent;
+    margin: 0 0 0 var(--sp-4);
+    padding: 0;
+    /* max-height transition zamiast display:none — pozwala animować */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.32s cubic-bezier(.4,0,.2,1),
+                border-color 0.2s;
   }
-  .dropdown.active .dropdown-menu { display: block; }
-  .dropdown-menu a { font-size: var(--text-base); padding: var(--sp-3) var(--sp-4); }
+  .dropdown.active .dropdown-menu {
+    max-height: 480px;
+    border-color: var(--c-accent);
+  }
+  .dropdown-menu a {
+    font-size: var(--text-sm);
+    padding: var(--sp-3) var(--sp-4);
+    color: var(--c-muted);
+    border-left: none;
+  }
+  .dropdown-menu a:first-child { padding-top: var(--sp-3); }
+  .dropdown-menu a:last-child  { padding-bottom: var(--sp-4); }
+  .dropdown-menu a::before     { display: none; }
+  .dropdown-menu a:hover,
+  .dropdown-menu a:active      { color: var(--c-ink); background: transparent; }
 
   .nav-links .btn { display: none; }
 
@@ -1021,6 +1039,13 @@ strong { color: var(--c-ink); font-weight: 600; }
 
   /* O mnie — siatka bio bez inline style */
   .about-grid { grid-template-columns: 1fr !important; gap: 2rem !important; }
+
+  /* Strony usług — inline grid 1fr 320px → 1 kolumna */
+  [style*="grid-template-columns:1fr 320px"] { display: block !important; }
+  [style*="grid-template-columns:1fr 320px"] > * + * { margin-top: var(--sp-8); }
+
+  /* Dropdown toggle — większy obszar tapnięcia */
+  .dropdown-toggle { padding-block: var(--sp-4); width: 100%; justify-content: space-between; }
 
   .sticky-cta { display: flex; }
   .sticky-cta .btn { flex: 1; justify-content: center; }
