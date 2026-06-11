@@ -458,6 +458,7 @@ strong { color: var(--c-ink); font-weight: 600; }
   background: var(--c-surface);
   border: 1px solid var(--c-border);
   border-radius: var(--r-xl);
+  padding: var(--sp-6);
   overflow: hidden;
   transition:
     transform var(--t-slow) var(--ease),
@@ -706,7 +707,6 @@ strong { color: var(--c-ink); font-weight: 600; }
 .faq-item summary {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: var(--sp-4);
   padding: var(--sp-5) var(--sp-6);
   font-size: var(--text-base);
@@ -715,14 +715,20 @@ strong { color: var(--c-ink); font-weight: 600; }
   cursor: pointer;
   list-style: none;
   transition: color var(--t-fast);
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 .faq-item summary::-webkit-details-marker { display: none; }
 .faq-item summary:hover { color: var(--c-ink); }
+/* Tekst pytania — rośnie żeby wypełnić przestrzeń (w span lub bez) */
+.faq-item summary span { flex: 1; min-width: 0; }
 
 .faq-icon {
   width: 20px;
   height: 20px;
   flex-shrink: 0;
+  margin-left: auto;
+  order: 1; /* zawsze na końcu, niezależnie od kolejności w HTML */
   color: var(--c-muted);
   transition: transform var(--t-base) var(--ease), color var(--t-base);
 }
