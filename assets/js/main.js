@@ -22,8 +22,17 @@ document.addEventListener('DOMContentLoaded', function () {
   if (btn && nav) {
     btn.innerHTML = iconOpen;
 
+    const closeMenu = () => {
+      nav.classList.remove('active');
+      document.body.style.overflow = '';
+      btn.setAttribute('aria-expanded', 'false');
+      btn.setAttribute('aria-label', 'Otwórz menu');
+      btn.innerHTML = iconOpen;
+    };
+
     btn.addEventListener('click', () => {
       const open = nav.classList.toggle('active');
+      document.body.style.overflow = open ? 'hidden' : '';
       btn.setAttribute('aria-expanded', open);
       btn.setAttribute('aria-label', open ? 'Zamknij menu' : 'Otwórz menu');
       btn.innerHTML = open ? iconClose : iconOpen;
@@ -31,10 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     document.addEventListener('click', e => {
       if (!btn.contains(e.target) && !nav.contains(e.target) && nav.classList.contains('active')) {
-        nav.classList.remove('active');
-        btn.setAttribute('aria-expanded', 'false');
-        btn.setAttribute('aria-label', 'Otwórz menu');
-        btn.innerHTML = iconOpen;
+        closeMenu();
       }
     });
   }

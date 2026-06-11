@@ -107,6 +107,7 @@
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
 }
 
 /* ── BASE ───────────────────────────────────────────────────────── */
@@ -116,7 +117,6 @@ body {
   line-height: 1.75;
   background-color: var(--c-bg);
   color: var(--c-body);
-  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
