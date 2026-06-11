@@ -551,6 +551,90 @@
 }
 
 /* ══════════════════════════════════════════════════════════════
+   WYKRES OSZCZĘDNOŚCI — savings-chart
+   CSS-only, animowany przez IntersectionObserver (.reveal)
+   ══════════════════════════════════════════════════════════════ */
+
+.savings-chart {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+  margin-top: var(--sp-6);
+}
+
+.savings-row {
+  display: grid;
+  grid-template-columns: 1fr 3fr auto;
+  align-items: center;
+  gap: var(--sp-4);
+}
+
+.savings-label {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--c-ink);
+  line-height: 1.3;
+}
+
+.savings-track {
+  height: 10px;
+  background: var(--c-surface-2);
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.savings-fill {
+  height: 100%;
+  width: var(--w, 25%);
+  background: var(--c-accent);
+  border-radius: 99px;
+  transform-origin: left center;
+  transform: scaleX(0);
+  /* delay 0.25s żeby row zdążył się pojawić przed animacją słupka */
+  transition: transform 0.9s cubic-bezier(.4,0,.2,1) 0.25s;
+  will-change: transform;
+}
+
+/* Trigger: gdy rodzic .savings-row dostanie .visible od IO */
+.savings-row.visible .savings-fill {
+  transform: scaleX(1);
+}
+
+.savings-value {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--c-accent);
+  white-space: nowrap;
+  min-width: 4.5rem;
+  text-align: right;
+}
+
+.savings-disclaimer {
+  font-size: var(--text-xs);
+  color: var(--c-muted);
+  margin-top: var(--sp-3);
+  line-height: 1.5;
+}
+
+/* Mobile: etykieta nad słupkiem */
+@media (max-width: 600px) {
+  .savings-row {
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+    row-gap: var(--sp-2);
+  }
+  .savings-label { grid-column: 1; grid-row: 1; }
+  .savings-value { grid-column: 2; grid-row: 1; }
+  .savings-track { grid-column: 1 / -1; grid-row: 2; }
+}
+
+/* Reduced-motion: słupki pełne od razu, bez animacji */
+@media (prefers-reduced-motion: reduce) {
+  .savings-fill,
+  .savings-row.visible .savings-fill { transform: scaleX(1); transition: none; }
+}
+
+/* ══════════════════════════════════════════════════════════════
    ANIMACJE TERMICZNE
    Wydajne: wyłącznie transform / opacity / color / text-shadow
    GPU-accelerated: translate3d, will-change ograniczone do hero

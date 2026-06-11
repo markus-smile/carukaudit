@@ -30,7 +30,8 @@ document.addEventListener('DOMContentLoaded', function () {
       btn.innerHTML = iconOpen;
     };
 
-    btn.addEventListener('click', () => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
       const open = nav.classList.toggle('active');
       document.body.style.overflow = open ? 'hidden' : '';
       btn.setAttribute('aria-expanded', open);
