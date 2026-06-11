@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 84" role="img" aria-label="Caruk Audit">
+  <title>Caruk Audit</title>
+  <defs>
+    <style>
+      @font-face {
+        font-family: 'FrauncesLogo';
+        src: url('data:font/woff2;base64,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') format('woff2');
+        font-weight: normal;
+        font-style: normal;
+        font-display: block;
+      }
+    </style>
+  </defs>
+  <!-- Marka: 3 słupki odczytu termicznego -->
+  <rect x="4.00" y="40.00" width="3.2" height="12" rx="1.4" fill="#dba14e"/>
+  <rect x="10.20" y="32.00" width="3.2" height="20" rx="1.4" fill="#dba14e"/>
+  <rect x="16.40" y="22.00" width="3.2" height="30" rx="1.4" fill="#dba14e"/>
+  <!-- Wordmark -->
+  <text x="27.60" y="52"
+        font-family="'FrauncesLogo', Georgia, 'Times New Roman', serif"
+        font-size="50" font-weight="normal"
+        fill="#f4f1ea" letter-spacing="-0.8"
+        text-rendering="optimizeLegibility">Caruk Audit</text>
+  <!-- Linia bazowa — pełna szerokość kompozycji -->
+  <line x1="4.00" y1="57.50" x2="276.00" y2="57.50"
+        stroke="#dba14e" stroke-width="1.5" stroke-linecap="round"/>
+</svg>

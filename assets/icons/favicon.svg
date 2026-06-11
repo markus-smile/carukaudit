@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="heat" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e8c074"/>
+      <stop offset="60%" stop-color="#dba14e"/>
+      <stop offset="100%" stop-color="#cc6a55"/>
+    </linearGradient>
+  </defs>
+  <!-- Tło ciemne zaokrąglone -->
+  <rect width="100" height="100" rx="18" fill="#121929"/>
+  <!-- Bryła domu (prostokąt) -->
+  <rect x="22" y="52" width="56" height="32" rx="3" fill="url(#heat)"/>
+  <!-- Dach (trójkąt) -->
+  <polygon points="50,18 82,54 18,54" fill="url(#heat)"/>
+  <!-- Ciemne wycięcia okien dla głębi -->
+  <rect x="31" y="62" width="14" height="14" rx="2" fill="#0a0e1a" opacity="0.4"/>
+  <rect x="55" y="62" width="14" height="14" rx="2" fill="#0a0e1a" opacity="0.4"/>
+</svg>

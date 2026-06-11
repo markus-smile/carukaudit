@@ -1,0 +1,9 @@
+/* TEAM */
+  Designer & Developer: GitHub Copilot (AI)
+  Owner: Olaf Caruk
+
+/* SITE */
+  Last update: 2025-12-14
+  Standards: HTML5, CSS3
+  Components: Modern Static Site
+  Software: VS Code
